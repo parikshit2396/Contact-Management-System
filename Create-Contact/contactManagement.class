@@ -1,0 +1,19 @@
+public class contactOperation {
+    
+    @AuraEnabled
+    public static void createContactRecord(string conName,string conEmail,string conPhone){
+        List<Contact> conList = new List<Contact>();
+        Contact conRecord = new Contact();
+        conRecord.LastName = conName;
+        conRecord.Email = conEmail;
+        conRecord.Phone = conPhone;
+        conList.add(conRecord);
+        try{
+        insert conRecord;
+        }
+        catch(Exception e){
+            system.debug(e.getMessage());
+        }
+     }
+   
+}

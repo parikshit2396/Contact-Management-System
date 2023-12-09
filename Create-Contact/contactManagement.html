@@ -1,0 +1,17 @@
+<template>
+    <lightning-button label={conButton} variant="brand" onclick={handelonclick}></lightning-button>
+        <template if:true={createTemplate}>
+            <lightning-card title="Create Contact Record" icon-name="standard:contact" style="width:50px">
+                <div class = "slds-m-around_medium"> 
+                    <form>
+                        <lightning-input label="Enter Contact Name" type="text" required="required" value={contactRecord.LastName} onchange={handleonChangeName}></lightning-input>
+                        <lightning-input label="Enter Email Address" type="email" value={contactRecord.Email} onchange={handleonChangeEmail}></lightning-input>
+                        <lightning-input label="Enter Phone number" type="tel" value={contactRecord.Phone} onchange={handleonChangePhone}></lightning-input>
+                        
+                        <lightning-button label="Save" onclick={handleSave}></lightning-button>
+                    </form>
+                </div>
+                </lightning-card>
+        </template>
+    
+</template>

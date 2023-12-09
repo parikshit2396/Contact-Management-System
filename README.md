@@ -1,2 +1,2 @@
 # Contact-Management-System
- This is Contact Management LWC components.By using this components we perform CRUD operations.
+ This is Contact Management System.It is salesforce LWC components where we perform CRUD operations on Contact Object.

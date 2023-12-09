@@ -1,0 +1,10 @@
+public class searchContact {
+
+    @AuraEnabled(cacheable=true)
+    public static List<Contact> fecthContact(string searchKey){
+		string theKey = '%' + searchKey + '%';  
+        List<Contact> conList = [select Id,LastName, Email, Phone, CreatedById from Contact where LastName LIKE:theKey];
+        system.debug(conList);
+        return conList;
+    }
+}

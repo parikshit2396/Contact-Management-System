@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title='Quickly Search Contacts' icon-name="standard:contact">
+        <div class = "slds-m-around_medium">  
+        <lightning-input type="search" onchange={handlechange} label="Search Contacts Here.."></lightning-input>
+            <template if:true={contacts}>
+                <lightning-datatable key-field='Id' data={contacts} columns={columns} hide-checkbox-column="true" show-row-number-column="true"
+                onrowaction={handlerowaction}></lightning-datatable>
+            </template>
+            <template if:true={error}>
+                {errors}
+            </template>
+        </div>
+    </lightning-card>
+    
+</template>
